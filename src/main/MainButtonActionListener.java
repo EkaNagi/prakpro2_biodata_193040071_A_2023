@@ -11,12 +11,15 @@ import java.awt.event.*;
  * @author ACER-PC
  */
 public class MainButtonActionListener implements ActionListener {
+//    deklarasi variable
     private MainFrame mainFrame;
     
+//    deklarasi kelas
     public MainButtonActionListener(MainFrame mainFrame){
         this.mainFrame = mainFrame;
     }
     
+//    deklarasi aksi tombol main
     public void actionPerformed(ActionEvent e){
         if(e.getSource() == mainFrame.getButtonBiodata()){
             mainFrame.showBiodataFrame();

@@ -9,9 +9,11 @@ package jenis_kelamin;
  * @author ACER-PC
  */
 public class JenisKelamin {
+//    deklarasi variable
     private String id;
     private String nama;
     
+//    deklarasi setter getter
     public void setId(String id){
         this.id = id;
     }

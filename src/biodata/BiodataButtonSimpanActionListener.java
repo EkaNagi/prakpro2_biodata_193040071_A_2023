@@ -15,14 +15,17 @@ import javax.swing.JOptionPane;
  * @author ACER-PC
  */
 public class BiodataButtonSimpanActionListener implements ActionListener{
+//    deklarasi variable
     private BiodataFrame biodataFrame;
     private BiodataDao biodataDao;
     
+//    deklarasi kelas
     public BiodataButtonSimpanActionListener(BiodataFrame biodataFrame, BiodataDao biodataDao){
         this.biodataFrame = biodataFrame;
         this.biodataDao = biodataDao;
     }
     
+//    deklarasi method aksi simpan
     public void actionPerformed(ActionEvent e){
         int confirmation1 = JOptionPane.showConfirmDialog(this.biodataFrame,
                         "Apakah yakin anda ingin menambahkan data ?", "Konfirmasi", JOptionPane.YES_NO_OPTION);

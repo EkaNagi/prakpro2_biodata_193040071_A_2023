@@ -19,6 +19,7 @@ import jenis_kelamin.JenisKelamin;
  * @author ACER-PC
  */
 public class JenisKelaminDao {
+//    method insert ke database
     public int insert(JenisKelamin jenisKelamin){
         int result = -1;
         try(Connection connection = MySqlConnection.getInstance().getConnection();){
@@ -33,6 +34,7 @@ public class JenisKelaminDao {
         return result;
     }
     
+//    method ubah ke database
     public int update(JenisKelamin jenisKelamin){
         int result = -1;
         try(Connection connection = MySqlConnection.getInstance().getConnection();){
@@ -47,6 +49,7 @@ public class JenisKelaminDao {
         return result;
     }
     
+//    method hapus ke database
     public int delete(JenisKelamin jenisKelamin){
         int result = -1;
         try(Connection connection = MySqlConnection.getInstance().getConnection();){
@@ -60,6 +63,7 @@ public class JenisKelaminDao {
         return result;
     }
     
+//    method cari data yang ada di database
     public List<JenisKelamin> findAll(){
         List<JenisKelamin> list = new ArrayList<>();
         try(Connection connection = MySqlConnection.getInstance().getConnection();

@@ -13,14 +13,17 @@ import dao.JenisKelaminDao;
  * @author ACER-PC
  */
 public class JenisKelaminButtonSimpanActionListener implements ActionListener{
+//    deklarasi variable
     private JenisKelaminFrame jenisKelaminFrame;
     private JenisKelaminDao jenisKelaminDao;
     
+//    deklarasi kelas
     public JenisKelaminButtonSimpanActionListener(JenisKelaminFrame jenisKelaminFrame, JenisKelaminDao jenisKelaminDao){
         this.jenisKelaminFrame = jenisKelaminFrame;
         this.jenisKelaminDao = jenisKelaminDao;
     }
     
+//    deklarasi aksi method simpan
     public void actionPerformed(ActionEvent e){
         String nama= this.jenisKelaminFrame.getNama();
         JenisKelamin jenisKelamin = new JenisKelamin();

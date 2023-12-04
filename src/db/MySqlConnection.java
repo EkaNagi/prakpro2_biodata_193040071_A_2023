@@ -12,12 +12,15 @@ import java.sql.DriverManager;
  * @author ACER-PC
  */
 public class MySqlConnection {
+//    deklarasi variable host, nama database dan password database
     private final static String DB_URL = "jdbc:mysql://localhost:3306/biodata_pp2";
     private final static String DB_USER = "root";
     private final static String DB_PASS = "";
     
+//    deklarasi instance
     private static MySqlConnection instance;
     
+//    deklarasi get instance
     public static MySqlConnection getInstance(){
         if(instance == null){
             instance = new MySqlConnection();
@@ -25,6 +28,7 @@ public class MySqlConnection {
         return instance;
     }
     
+//    deklarasi get connection
     public Connection getConnection(){
         Connection connection = null;
         try{

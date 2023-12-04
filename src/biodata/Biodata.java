@@ -11,12 +11,14 @@ import jenis_kelamin.JenisKelamin;
  * @author ACER-PC
  */
 public class Biodata {
+//    deklarasi variable
     private String id;
     private String nama;
     private JenisKelamin jenisKelamin;
     private String nomorHp;
     private String alamat;
     
+//    setter getter
     public void setId(String id){
         this.id = id;
     }

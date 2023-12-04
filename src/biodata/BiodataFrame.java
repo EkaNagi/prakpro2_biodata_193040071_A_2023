@@ -17,6 +17,7 @@ import dao.JenisKelaminDao;
  * @author ACER-PC
  */
 public class BiodataFrame extends JFrame {
+//    deklarasi variable
     private List<JenisKelamin> jenisKelaminList;
     private List<Biodata> biodataList;
     private JTextField textFieldNama;
@@ -28,14 +29,17 @@ public class BiodataFrame extends JFrame {
     private JenisKelaminDao jenisKelaminDao;
     
     public BiodataFrame(BiodataDao biodataDao, JenisKelaminDao jenisKelaminDao){
+//        deklarasi fungsi aplikasi ketika tidak melakukan apapun ketika ditutup
         this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         
+//        deklarasi kelas
         this.biodataDao = biodataDao;
         this.jenisKelaminDao = jenisKelaminDao;
         
         this.biodataList = biodataDao.findAll();
         this.jenisKelaminList = jenisKelaminDao.findAll();
         
+//        deklarasi label, text field, combo box, text area dan button
         JLabel labelNama = new JLabel("Nama: ");
         labelNama.setBounds(15, 40, 350, 10);
         
@@ -63,17 +67,22 @@ public class BiodataFrame extends JFrame {
         JButton button = new JButton("Simpan");
         button.setBounds(15, 280, 100, 40);
         
+//        deklarasi tabel
         javax.swing.JTable table = new JTable();
         JScrollPane scrollableTable = new JScrollPane(table);
         scrollableTable.setBounds(15, 320, 350, 200);
         
+//        deklarasi pemanggilan model tabel
         tableModel = new BiodataTableModel(biodataList);
         table.setModel(tableModel);
         
+//        deklarasi pemanggilan method simpan
         BiodataButtonSimpanActionListener actionListener = new BiodataButtonSimpanActionListener(this, biodataDao);
         
+//        deklarasi aksi untuk button
         button.addActionListener(actionListener);
         
+//        penambahan komponen aplikasi
         this.add(button);
         this.add(labelNama);
         this.add(textFieldNama);
@@ -85,9 +94,11 @@ public class BiodataFrame extends JFrame {
         this.add(textArea);
         this.add(scrollableTable);
         
+//        penyesuaian ukuran aplikasi
         this.setSize(400, 800);
         this.setLayout(null);
         
+//        method konfirmasi ketika di close
         addWindowListener(new WindowAdapter(){
            public void windowClosing(WindowEvent e){
                int confirmation2 = JOptionPane.showConfirmDialog(null, "Apakah anda yaking ingin keluar dari program?", "Konfirmasi Keluar", JOptionPane.YES_NO_OPTION);
@@ -98,6 +109,7 @@ public class BiodataFrame extends JFrame {
         });
     }
     
+//    method pengisian combo box
     public void populateComboJenis(){
         this.jenisKelaminList = this.jenisKelaminDao.findAll();
         comboJenis.removeAllItems();
@@ -106,22 +118,27 @@ public class BiodataFrame extends JFrame {
         }
     }
     
+//    method get value nama
     public String getNama(){
         return textFieldNama.getText();
     }
     
+//    method get value jenis kelamin
     public JenisKelamin getJenisKelamin(){
         return jenisKelaminList.get(comboJenis.getSelectedIndex());
     }
     
+//    method get value nomor hp
     public String getNomorHp(){
         return textFieldNomorHp.getText();
     }
     
+//    method get value alamat
     public String getAlamat(){
         return textArea.getText();
     }
     
+//    method penambahan biodata
     public void addBiodata(Biodata biodata){
         tableModel.add(biodata);
         textFieldNama.setText("");
@@ -129,10 +146,12 @@ public class BiodataFrame extends JFrame {
         textArea.setText("");
     }
     
+//    method alert
     public void showAlert(String message){
         JOptionPane.showMessageDialog(this, message, "Error", JOptionPane.ERROR_MESSAGE);
     }
     
+//    method success
     public void showSuccess(String message){
         JOptionPane.showMessageDialog(this, message, "Success", JOptionPane.INFORMATION_MESSAGE);
     }

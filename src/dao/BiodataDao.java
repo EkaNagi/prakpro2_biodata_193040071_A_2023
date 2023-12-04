@@ -20,6 +20,7 @@ import jenis_kelamin.JenisKelamin;
  * @author ACER-PC
  */
 public class BiodataDao {
+//    method insert ke database
     public int insert(Biodata biodata){
         int result = -1;
         try(Connection connection = MySqlConnection.getInstance().getConnection();){
@@ -37,6 +38,7 @@ public class BiodataDao {
         return result;
     }
     
+//    method ubah ke database
     public int update(Biodata biodata){
         int result = -1;
         try(Connection connection = MySqlConnection.getInstance().getConnection();){
@@ -54,6 +56,7 @@ public class BiodataDao {
         return result;
     }
     
+//    method hapus ke database
     public int delete(Biodata biodata){
         int result = -1;
         try(Connection connection = MySqlConnection.getInstance().getConnection();){
@@ -67,6 +70,7 @@ public class BiodataDao {
         return result;
     }
     
+//    method cari data yang ada di database
     public List<Biodata> findAll(){
         List<Biodata> list = new ArrayList<>();
         try(Connection connection = MySqlConnection.getInstance().getConnection();
